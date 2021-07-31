@@ -9806,7 +9806,7 @@ svg-baker@^1.4.0, svg-baker@^1.4.1:
     query-string "^4.3.2"
     traverse "^0.6.6"
 
-svg-sprite-loader-mod@4.1.6-mod1:
+svg-sprite-loader-mod@^4.1.6-mod1:
   version "4.1.6-mod1"
   resolved "https://registry.nlark.com/svg-sprite-loader-mod/download/svg-sprite-loader-mod-4.1.6-mod1.tgz#08ecb328c9dd20472b596cd49fba85e0af99f0e9"
   integrity sha1-COyzKMndIEcrWWzUn7qF4K+Z8Ok=
