@@ -5,7 +5,7 @@
     </div>
     <ul class="current">
       <li v-for="tag in dataSource" :key="tag"
-
+          :class="{selected: selectedTags.indexOf(tag)>=0}"
           @click="toggle(tag)">{{tag}}</li>
     </ul>
   </div>
@@ -20,6 +20,7 @@ import {Component,Prop} from 'vue-property-decorator';
 export default class tags extends Vue{
  @Prop(Array) readonly dataSource:string[] | undefined;
  selectedTags: string[] = [];
+
  toggle(tag: string){
    const index = this.selectedTags.indexOf(tag);
    if(index >= 0) {
@@ -29,7 +30,7 @@ export default class tags extends Vue{
    }
    this.$emit('update:value',this.selectedTags)
  }
- creat() {
+ create() {
    const name = window.prompt('请输入标签名')
     if(name === '') {
       window.alert('标签名不能为空');
