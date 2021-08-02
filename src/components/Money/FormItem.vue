@@ -12,15 +12,16 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {Component, Prop, Watch} from 'vue-property-decorator';
+import {Component, Prop} from 'vue-property-decorator';
 
 @Component
-export default class FormItem extends Vue{
+export default class FormItem extends Vue {
   @Prop({default: ''}) readonly value!: string;
   @Prop({required: true}) fieldName!: string;
   @Prop() placeholder?: string;
-  onValueChanged(value: string){
-    this.$emit('update:value',value);
+
+  onValueChanged(value: string) {
+    this.$emit('update:value', value);
   }
 }
 </script>

@@ -14,26 +14,26 @@ const routes = [
         redirect: '/money'
     },
     {
-        path:'/money',
+        path: '/money',
         component: Money
     },
     {
-        path:'/labels',
+        path: '/labels',
         component: Labels
     },
     {
-        path:'/labels/edit/:id',
-        component: EditLabel
-    },
-    {
-        path:'/statistics',
+        path: '/statistics',
         component: Statistics
     },
     {
-        path:'*',
+        path: '/labels/edit/:id',
+        component: EditLabel
+    },
+    {
+        path: '*',
         component: NotFound
     }
-]
+];
 
 const router = new VueRouter({
     routes

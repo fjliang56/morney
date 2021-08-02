@@ -1,13 +1,16 @@
 <template>
   <nav>
     <router-link to="/labels" class="item" active-class="selected">
-      <Icon name="labels"/>标签
+      <Icon name="labels"/>
+      标签
     </router-link>
     <router-link to="/money" class="item" active-class="selected">
       <Icon name="money"/>
-      记账</router-link>
+      记账
+    </router-link>
     <router-link to="/statistics" class="item" active-class="selected">
-      <Icon name="statistics"/>统计
+      <Icon name="statistics"/>
+      统计
     </router-link>
 
   </nav>
@@ -22,25 +25,31 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/helper.scss";
-nav{
+
+nav {
   @extend %outerShadow;
   display: flex;
   flex-direction: row;
   font-size: 12px;
-  > .item{
+
+  > .item {
     padding: 2px 0;
     width: 33.33333%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
     .icon {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
     }
+
     p {
       margin: 4px 0;
     }
-    > .item.selected{
+
+    > .item.selected {
       color: #42b983;
     }
   }
