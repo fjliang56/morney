@@ -17,7 +17,7 @@ import {Component, Prop} from 'vue-property-decorator';
 
 @Component
 export default class Types extends Vue {
-  @Prop({default: '-'}) readonly  value!: string;
+  @Prop() readonly  value!: string;
 
   selectType(type: string) {
     if (type !== '-' && type !== '+') {
