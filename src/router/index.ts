@@ -5,6 +5,7 @@ import Labels from '@/views/Labels.vue';
 import Statistics from '@/views/Statistics.vue';
 import NotFound from '@/views/NotFound.vue';
 import EditLabel from '@/views/EditLabel.vue';
+import Echart from '@/views/Echart.vue';
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,10 @@ const routes = [
     {
         path: '/labels',
         component: Labels
+    },
+    {
+      path:'/echart',
+      component: Echart
     },
     {
         path: '/statistics',

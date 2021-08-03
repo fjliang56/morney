@@ -9,9 +9,14 @@
       记账
     </router-link>
     <router-link to="/statistics" class="item" active-class="selected">
-      <Icon name="statistics"/>
+      <Icon name="statistics (2)"/>
       统计
     </router-link>
+    <router-link to="/echarts" class="item" active-class="selected">
+      <Icon name="echarts"/>
+      图表
+    </router-link>
+
 
   </nav>
 </template>
