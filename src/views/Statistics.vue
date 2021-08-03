@@ -25,23 +25,6 @@ import recordTypeList from '@/constants/recordTypeList';
 import dayjs from 'dayjs';
 import clone from '@/lib/clone';
 
-// type RootState = {
-//   recordList: RecordItem[],
-//   tagList: Tag[],
-//   currentTag?: Tag
-// }
-// type RecordItem = {
-//   tags: Tag[]
-//   notes: string
-//   type: string
-//   amount: number
-//   createdAt?: string
-// }
-//
-// type Tag = {
-//   id: string;
-//   name: string;
-// }
 
 @Component({
   components: {Tabs},
@@ -82,9 +65,9 @@ export default class Statistics extends Vue {
         .filter(r => r.type === this.type)
         .sort((a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf());
 
-    // if (newList.length === 0) {
-    //   return [] as Result;
-    // }
+    if (newList.length === 0) {
+      return [] as Result;
+    }
     type Result = { title: string, total?: number, items: RecordItem[] }[]
     const result: Result = [{title: dayjs(newList[0].createdAt).format('YYYY-MM-DD'), items: [newList[0]]}];
     for (let i = 1; i < newList.length; i++) {
@@ -96,6 +79,7 @@ export default class Statistics extends Vue {
         result.push({title: dayjs(current.createdAt).format('YYYY-MM-DD'), items: [current]});
       }
     }
+
     result.map(group => {
       group.total = group.items.reduce((sum, item) => {
         console.log(sum);
