@@ -1,7 +1,5 @@
 <template>
-  <div>
-    App
-    <hr/>
+  <div id="app">
     <router-view/>
   </div>
 </template>

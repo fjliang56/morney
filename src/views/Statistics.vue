@@ -3,7 +3,7 @@
     <Tabs class-prefix="type" :data-source="recordTypeList" :value.sync="type"/>
     <ol>
       <li v-for="(group, index) in groupedList" :key="index">
-        <h3 class="title">{{ beautify(group.title) }} <span>￥{{ group.total }}</span></h3>
+        <h3 class="title">{{beautify(group.title)}} <span>￥{{group.total}}</span></h3>
         <ol>
           <li v-for="item in group.items" :key="item.id"
               class="record"
@@ -25,23 +25,23 @@ import recordTypeList from '@/constants/recordTypeList';
 import dayjs from 'dayjs';
 import clone from '@/lib/clone';
 
-type RootState = {
-  recordList: RecordItem[],
-  tagList: Tag[],
-  currentTag?: Tag
-}
-type RecordItem = {
-  tags: Tag[]
-  notes: string
-  type: string
-  amount: number
-  createdAt?: string
-}
-
-type Tag = {
-  id: string;
-  name: string;
-}
+// type RootState = {
+//   recordList: RecordItem[],
+//   tagList: Tag[],
+//   currentTag?: Tag
+// }
+// type RecordItem = {
+//   tags: Tag[]
+//   notes: string
+//   type: string
+//   amount: number
+//   createdAt?: string
+// }
+//
+// type Tag = {
+//   id: string;
+//   name: string;
+// }
 
 @Component({
   components: {Tabs},
@@ -57,7 +57,7 @@ export default class Statistics extends Vue {
     if (day.isSame(now, 'day')) {
       return '今天';
     } else if (day.isSame(now.subtract(1, 'day'), 'day')) {
-      console.log('hi');
+      console.log('hi')
       return '昨天';
     } else if (day.isSame(now.subtract(2, 'day'), 'day')) {
       return '前天';
@@ -82,9 +82,9 @@ export default class Statistics extends Vue {
         .filter(r => r.type === this.type)
         .sort((a, b) => dayjs(b.createdAt).valueOf() - dayjs(a.createdAt).valueOf());
 
-    if (newList.length === 0) {
-      return [] as Result;
-    }
+    // if (newList.length === 0) {
+    //   return [] as Result;
+    // }
     type Result = { title: string, total?: number, items: RecordItem[] }[]
     const result: Result = [{title: dayjs(newList[0].createdAt).format('YYYY-MM-DD'), items: [newList[0]]}];
     for (let i = 1; i < newList.length; i++) {

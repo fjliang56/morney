@@ -1,8 +1,8 @@
 <template>
   <Layout>
     <div class="navBar">
-      <Icon class="leftIcon" name="left" @click="goBack"/>
-      <span class="title">编辑标签</span>
+      <div @click="goBack" ><Icon class="leftIcon" name="left"/></div>
+      <span class="title"  >编辑标签</span>
       <span class="rightIcon"/>
     </div>
     <div class="form-wrapper">
@@ -30,6 +30,10 @@ export default class EditLabel extends Vue {
     return this.$store.state.currentTag;
   }
 
+  goBack() {
+    this.$router.back();
+  }
+
   created() {
     const id = this.$route.params.id;
     this.$store.commit('fetchTags');
@@ -50,13 +54,12 @@ export default class EditLabel extends Vue {
 
   remove() {
     if (this.currentTag) {
+      console.log('1')
       this.$store.commit('removeTag', this.currentTag.id);
     }
   }
 
-  goBack() {
-    this.$router.back();
-  }
+
 }
 </script>
 
