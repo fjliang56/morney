@@ -16,8 +16,6 @@
       <Icon name="echarts"/>
       图表
     </router-link>
-
-
   </nav>
 </template>
 
