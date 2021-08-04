@@ -10,7 +10,7 @@ export default {
      mounted() {
        const width = document.documentElement.clientWidth
        this.$refs.container.style.width = `${width - 20}px`
-       this.$refs.container.style.height = `${(width - 20)*1.2}px`
+       this.$refs.container.style.height = `${(width - 20)*1.6}px`
        this.chart = echarts.init(this.$refs.container,'dark')
        this.chart.setOption(this.option)
      }
