@@ -1,24 +1,28 @@
 <template>
   <layout>
-  <div class="kingdom">
-  <Echart :option="option"></Echart>
+  <div class="wrapper">
+    <Chart :options="x"/>
   </div>
   </layout>
 </template>
 
 
 <script lang="ts">
-import Echart from '@/components/Echart.vue';
-import dayjs from 'dayjs';
+import {Component} from 'vue-property-decorator';
+import Tabs from '@/components/Tabs.vue';
+import Vue from 'vue';
+import Chart from '@/components/Chart.vue';
 
-export default {
-  data() {
+@Component({
+  components: {Tabs,Chart}
+})
+export default class Figure extends Vue {
+get x() {
     return {
-      option: {
         title: {
           text: '收入支出对比图'
         },
-        tooltip: {},
+        tooltip: {show: true},
         legend: {
           data: ['支出', '收入']
         },
@@ -29,22 +33,22 @@ export default {
         series: [{
           name: '支出',
           type: 'line',
-          data: [5, 20, 36, 10, 10, 20,50]
+          data: [5, 20, 36, 10, 10, 20, 50]
         },
           {
             name: '收入',
             type: 'line',
-            data: [5, 5, 1, 5, 10, 7,40]
-          }]
+            data: [5, 5, 1, 5, 10, 7, 40]
+          }],
       }
-    }
-  },
-  components: {Echart},
+  }
 }
 
 
 </script>
 
 <style lang="scss" scoped>
-
+ .echarts {
+   max-width: 100%;
+ }
 </style>
