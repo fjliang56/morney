@@ -13,6 +13,7 @@ import Tabs from '@/components/Tabs.vue';
 import Vue from 'vue';
 import Chart from '@/components/Chart.vue';
 
+
 @Component({
   components: {Tabs,Chart}
 })
