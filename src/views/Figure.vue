@@ -61,8 +61,10 @@ get chartOptions() {
   const values = this.keyValueList.map(item => item.value);
     return {
         title: {
-          text: '收入支出对比图'
+          text: '最近30天收入图',
+          right: "140px"
         },
+
         grid: {
           left: 0,
           right: 0,
