@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/echarts": "^4.6.3",
     "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.157",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-pwa": "^4.1.0",
